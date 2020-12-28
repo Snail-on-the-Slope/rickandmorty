@@ -31,7 +31,7 @@ export default {
     error: false,
   }),
   async mounted() {
-    if (!this.$store.getters.characters) {
+    if (this.$store.getters.characters) {
       await this.$store.dispatch("fetchСharacters");
     }
     this.loading = false;
@@ -49,7 +49,7 @@ export default {
       window.location.reload();
     },
     async loadMore() {
-      await this.$store.dispatch("fetchMoreСharacters");
+      await this.$store.dispatch("fetchСharacters");
     },
   },
   components: {

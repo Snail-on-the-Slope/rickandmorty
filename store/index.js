@@ -8,17 +8,13 @@ Vue.use(Vuex);
 const store = () =>
     new Vuex.Store({
         state: {
-            characters: null,
+            characters: [],
             characterById: null,
             error: false,
             page: 1,
         },
         mutations: {
             updateСharacters(state, data) {
-                state.characters = data.data.results;
-                state.page += 1
-            },
-            addСharacters(state, data) {
                 data.data.results.forEach(e => state.characters.push(e))
                 state.page += 1
             },
@@ -35,15 +31,8 @@ const store = () =>
         },
         actions: {
             async fetchСharacters(ctx) {
-                let data = await axios.get("https://rickandmortyapi.com/api/character").then(res => {
-                    ctx.commit("updateСharacters", res);
-                }).catch(e => {
-                    ctx.commit("errorFound", e);
-                })
-            },
-            async fetchMoreСharacters(ctx) {
                 let data = await axios.get(`https://rickandmortyapi.com/api/character/?page=${ctx.getters.page}`).then(res => {
-                    ctx.commit("addСharacters", res);
+                    ctx.commit("updateСharacters", res);
                 }).catch(e => {
                     ctx.commit("errorFound", e);
                 })
