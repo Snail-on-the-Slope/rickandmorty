@@ -1,0 +1,64 @@
+@import "@/assets/styles/loader.scss";
+//error
+%error-page {
+    .error-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // width: 40%;
+        margin: 0 auto;
+        h1 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 120%;
+            color: #012345;
+        }
+        p {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 146%;
+            color: #677b8f;
+            text-align: center;
+        }
+        .button-reload {
+            display: flex;
+            justify-content: center;
+            width: 161px;
+            height: 48px;
+            background: #35495e;
+            border-radius: 12px;
+            margin-top: 3%;
+            p {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 14px;
+                color: #fff;
+                align-self: center;
+                background: #35495e;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    @media screen and (max-width: 425px) {
+        .error-page {
+            width: 80%;
+            h1 {
+                font-size: 24px;
+                line-height: 120%;
+            }
+            .button-reload {
+                width: 133px;
+                height: 44px;
+                p {
+                    font-size: 14px;
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+}
