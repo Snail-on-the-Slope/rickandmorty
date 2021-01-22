@@ -1,3 +1,5 @@
+DEMO https://snail-on-the-slope.github.io/rickandmorty/
+
 # rickandmorty
 
 ## Build Setup
